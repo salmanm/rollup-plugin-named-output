@@ -1,0 +1,50 @@
+{
+  "name": "rollup-plugin-named-output",
+  "version": "1.0.1",
+  "description": "Allows mapping of output file names",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "rollup -c",
+    "build:example": "rollup -c ./example/rollup.config.js",
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "cross-env NODE_ENV=test mocha --require @babel/register",
+    "prepush": "npm test",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salmanm/rollup-plugin-named-output.git"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "map",
+    "output",
+    "rollup-plugin"
+  ],
+  "author": "Salman Mitha <salmanmitha@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/salmanm/rollup-plugin-named-output/issues"
+  },
+  "homepage": "https://github.com/salmanm/rollup-plugin-named-output#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/register": "^7.0.0",
+    "cross-env": "^5.1.4",
+    "mocha": "^5.2.0",
+    "rollup": "1.21.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "standard": "^14.3.1",
+    "rollup-plugin-multi-input": "^1.0.2",
+    "rollup-plugin-named-directory": "^1.0.0",
+    "sinon": "^7.5.0"
+  }
+}
